@@ -16,8 +16,8 @@ object WelcomeToCodeJam {
 		var nr_cases = lines.next.toInt
 		for(i <- 0 until nr_cases) {
 			var str = lines.next.dropWhile(_!='w') // drop all letters before first w
-			var str2 = str.take(str.lastIndexOf('m')+1) // drop all letters after m
-			var str3 = str.filter(Set('w','e','l','c','o','m',' ','t','d','j','a')) // filter out all letters that are not in "welcome to code jam"
+			var str2 = str.take(str.lastIndexOf('m')+1) // drop all letters after last m
+			var str3 = str2.filter(Set('w','e','l','c','o','m',' ','t','d','j','a')) // filter out all letters that are not in "welcome to code jam"
 			var result = subsequence(str3.toList, "welcome to code jam".toList)
 			writer.println("Case #"+(i+1)+": " + "%04d".format(result%10000))
 			println("Case #"+(i+1)+": " + "%04d".format(result%10000))
